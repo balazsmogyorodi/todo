@@ -16,4 +16,14 @@ $(function () {
     const articleElem = $("article");
     new Megjelenit(adatok, hatarido, articleElem);
 
+    $(window).on("kesz", function(event){
+        console.log(event.detail);
+    })
+    $(window).on("megse", function(event){
+        console.log(event.detail);
+    })
+    $(window).on("tor", function(event){
+        console.log(event.detail);
+    })
+
 });

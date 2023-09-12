@@ -13,13 +13,15 @@ class MegjelelnitSor{
         console.log(this.keszElem);
       
         this.keszElem.on("click", () =>{
-            console.log("kesz");
+            this.esemenyTrigger("kesz")
         });
         this.megseElem.on("click", () =>{
             console.log("megse")
+            this.esemenyTrigger("megse")
         });
         this.torElem.on("click", () =>{
             console.log("tor")
+            this.esemenyTrigger("tor")
         });
 
     }
@@ -32,6 +34,11 @@ class MegjelelnitSor{
         txt +=  `<td> <spam class="kesz">efef</spam> <spam class="megse">X </spam> <spam class = "tor"> rgr</spam>`
         txt += "</tr>";
         this.szuloelem.append(txt);
+    }
+
+    esemenyTrigger(esemenyNeve) {
+        const esemeny = new CustomEvent(esemenyNeve, {detail:this})
+        window.dispatchEvent(esemeny);
     }
 
   
